@@ -28,8 +28,8 @@ public class App {
         test(client, modelId, escapedUrl);
         test(client, modelId, unescapedUrl);
 
-        // Uncomment line below to make app exit quickly and prevent reactor thread warnings
-        // System.exit(0);
+        // Required to prevent Reactor Netty threading errors when using "mvn exec:java"
+        System.exit(0);
     }
 
     public static void test(FormRecognizerClient client, String modelId, String url) {
